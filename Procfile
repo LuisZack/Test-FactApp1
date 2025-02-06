@@ -1,1 +1,0 @@
-worker: python ping_website.py halzfac.net.pe
