@@ -4,7 +4,6 @@ import requests
 import sys
 import time
 
-
 def enviar_mensaje_telegram(mensaje):
     TOKEN = '7070294206:AAHnrinmuF_VxebhaiCQmq9zT3TfiKEJWlc'
     CHAT_ID = '1154774418'
