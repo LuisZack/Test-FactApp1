@@ -1,0 +1,21 @@
+name: Ping Website Monitor
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '*/1 * * * *'  # Corre cada 1 minutos
+
+jobs:
+  run-ping-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Ejecutar el script
+        run: python Test-Apps.py
