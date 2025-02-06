@@ -1,9 +1,3 @@
-"""
-from ping3 import ping, verbose_ping
-#ping ("www.google.com")
-verbose_ping("halzfac.net.pe")
-"""
-
 import os
 import platform
 import requests
@@ -38,6 +32,7 @@ def hacer_ping(sitio):
         else:
             print(f'No se pudo acceder al sitio {sitio}.')
             msj_t=f'Alerta: No se pudo acceder al sitio {sitio}'
+            
         enviar_mensaje_telegram(msj_t)
         
         time.sleep(10)  # Espera 10 segundos antes de volver a hacer ping
@@ -49,32 +44,4 @@ if __name__ == '__main__':
         sitio = 'halzfac.net.pe'
     hacer_ping(sitio)
 
-
-
-"""
-def hacer_ping(sitio):
-    # Determinar el comando según el sistema operativo
-    param = "-n 1" if platform.system().lower() == "windows" else "-c 1"
-    comando = f"ping {param} {sitio}"
-    
-    # Ejecutar el comando y verificar la respuesta
-    respuesta = os.system(comando)
-    
-    if respuesta == 0:
-        print(f"El sitio {sitio} está accesible.")
-    else:
-        print(f"No se pudo acceder al sitio {sitio}.")
-    
-    enviar_mensaje_telegram(f" Alerta: No se pudo acceder al sitio {sitio}")
-
-if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1:
-        sitio = sys.argv[1]
-    else:
-        #sitio = input("Ingrese la URL o IP del sitio a hacer ping: ")
-        sitio = "halzfac.net.pe"
-    while True:
-        hacer_ping(sitio)
-"""
 
